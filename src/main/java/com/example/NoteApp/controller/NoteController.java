@@ -6,6 +6,7 @@ import com.example.NoteApp.service.NoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,7 +18,8 @@ import java.util.Optional;
 public class NoteController {
     @Autowired
     NoteService noteService;
-    @GetMapping("/getall")
+    @GetMapping("/get-all")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<List<NoteResponse>> getAllNote() {
         List<NoteResponse> noteResponseList = noteService.getAllNote();
 //        return ResponseEntity.ok(noteResponseList);
