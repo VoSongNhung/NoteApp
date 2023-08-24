@@ -30,11 +30,10 @@ public class SwaggerConfig {
     }
     private ApiInfo apiInfo() {
         return new ApiInfo(
-                "Edu System Online",
-                "Edu System Online API",
+                "Note Application",
                 "1.0",
                 "Terms of service",
-                new Contact("mintamzxje", "", ""),
+                new Contact("vosongnhung", "", ""),
                 "License of API",
                 "API license URL",
                 Collections.emptyList());
